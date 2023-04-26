@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/PhotoMat/layout/styles/layout.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/PhotoMat/layout/scripts/jquery.min.js"></script>
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="~/PhotoMat/layout/scripts/fancybox-2.1.5/jquery.fancybox.css" type="text/css" />
+    <script type="text/javascript" src="~/PhotoMat/layout/scripts/fancybox-2.1.5/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("a.fb_image").fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                openSpeed: 600,
+                closeSpeed: 600,
+                helpers: {
+                    overlay: {
+                        closeClick: true,
+                    },
+                    title: {
+                        type: 'over'
+                    }
+                }
+            });
+        });
+    </script>
+
+</head>
+<body id="top">
+
+    <div class="wrapper col1">
+        <div id="header">
+            <div class="fl_left">
+                <h1><a href="~/PhotoMat/index.html">Photomatic</a></h1>
+                <p>Free Website Template</p>
+            </div>
+            <div id="topnav">
+                <ul>
+	                <li class="active"><a href="~/PhotoMat/index.html">Home</a></li>
+                    <li><a href="~/PhotoMat/pages/style-demo.html">Style Demo</a></li>
+                    <li><a href="~/PhotoMat/pages/full-width.html">Full Width</a></li>
+                    <li><a href="#">Link Text</a></li>
+                    <li class="last"><a href="#">A Long Link Text</a></li>
+                </ul>
+            </div>
+            <br class="clear" />
+        </div>
+    </div>
+    <!-- ####################################################################################################### -->
+   
+    <div class="wrapper col2">
+        @RenderSection("main", false)
+    </div>
+    <!-- ####################################################################################################### -->
+<div class="wrapper col3">
+	
+    <div class="container">
+        <div class="pagination">
+            <ul>
+                <li class="first"><a href="#">First</a></li>
+                <li class="prev"><a href="#">Prev</a> </li>
+                <li class="pnum"><a href="#">1</a></li>
+                <li class="pnum"><a href="#">2</a></li>
+                <li class="pnum"><a href="#">3</a></li>
+                <li class="pnum"><a href="#">4</a></li>
+                <li class="current">5</li>
+                <li class="pnum"><a href="#">6</a></li>
+                <li class="pnum"><a href="#">7</a></li>
+                <li class="pnum"><a href="#">8</a></li>
+                <li class="pnum"><a href="#">9</a></li>
+                <li class="next"><a href="#">Next</a></li>
+                <li class="last"><a href="#">Last</a></li>
+            </ul>
+        </div>
+	    <div class="gallery">
+	        @RenderSection("galery", true)
+        </div>
+    </div>
+</div>
+    <!-- ####################################################################################################### -->
+    <div class="wrapper col5">
+        <div id="footer">
+            <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <br class="clear" />
+        </div>
+    </div>
+
+</body>
+</html>

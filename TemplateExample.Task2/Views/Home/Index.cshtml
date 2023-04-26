@@ -1,0 +1,45 @@
+﻿
+@using TemplateExample.Task2.Entity.Concrete
+@using TemplateExample.Task2.Entity.Concrete.View
+
+@model List<TemplateExample.Task2.Entity.Concrete.View.HomePageAndContentVM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageForUsers.cshtml";
+}
+@section sagMenu{
+
+    <div id="bodyRightPan">
+	    @foreach (HomePageAndContentVM item in Model)
+	    {
+		    if (item.ContentType == Convert.ToInt16(ContentType.FewTips) || item.ContentType == Convert.ToInt16(ContentType.LatestUpdates))
+		    {
+			    @Html.Raw(item.ContentTitle)
+			    @Html.Raw(item.ContentDescription)
+
+		    }
+	    }
+    </div>
+}
+
+@section ortaMenu{
+   @foreach (HomePageAndContentVM item in Model)
+   {
+	   if (item.ContentType == Convert.ToInt16(ContentType.Main))
+	   {
+		   @Html.Raw(item.ContentTitle)
+		   @Html.Raw(item.ContentDescription)
+
+
+	   }
+   }
+}
+
+
+
+
+
+
+
+
